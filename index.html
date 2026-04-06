@@ -56,7 +56,23 @@ header {
 .header-logo span { color: var(--teal); }
 .header-tagline { font-size: 11px; color: var(--text-dim); letter-spacing: 1px; }
 
-#screen-input { max-width: 560px; margin: 0 auto; padding: 48px 20px 80px; }
+#screen-input { max-width: 1100px; margin: 0 auto; padding: 48px 20px 80px; }
+
+/* PC 2カラムレイアウト */
+.pc-layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  align-items: start;
+}
+
+.pc-left { position: sticky; top: 80px; }
+.pc-right { }
+
+@media (max-width: 768px) {
+  .pc-layout { grid-template-columns: 1fr; gap: 0; }
+  .pc-left { position: static; }
+}
 
 .hero-area { text-align: center; margin-bottom: 40px; animation: fadeUp 0.6s ease forwards; }
 .hero-emoji { font-size: 48px; margin-bottom: 16px; display: block; animation: float 3s ease-in-out infinite; }
@@ -86,7 +102,7 @@ header {
 .trust-row { display: flex; justify-content: center; gap: 20px; margin-top: 28px; flex-wrap: wrap; }
 .trust-item { font-size: 11px; color: var(--text-mid); }
 
-#screen-result { max-width: 680px; margin: 0 auto; padding: 32px 16px 80px; }
+#screen-result { max-width: 860px; margin: 0 auto; padding: 32px 24px 80px; }
 
 .back-btn { display: flex; align-items: center; gap: 6px; background: none; border: 1px solid var(--border); border-radius: 8px; padding: 8px 14px; font-size: 12px; color: var(--text-mid); cursor: pointer; margin-bottom: 20px; transition: all 0.2s; }
 .back-btn:hover { background: var(--surface); }
@@ -173,33 +189,37 @@ canvas#cycleChart { width: 100%; display: block; }
 </header>
 
 <div id="screen-input" class="screen">
-  <div style="max-width:560px;margin:0 auto;padding:48px 20px 80px">
-    <div class="hero-area">
-      <span class="hero-emoji">🔮</span>
-      <h1 class="hero-title">星座で<em>無料診断</em></h1>
-      <p class="hero-desc">生年月日を入力するだけ。あなたの星座からAIが本質・才能・運勢を深層鑑定します。</p>
-    </div>
-    <div class="input-card">
-      <div class="input-card-title">🗓️ 生年月日を入力する</div>
-      <div class="input-card-desc">入力するだけで星座を自動判定し、AIが深く鑑定します</div>
-      <div class="field">
-        <label>生年月日</label>
-        <div class="date-row">
-          <input class="inp" type="number" id="inp-year" placeholder="例: 1990（年）" min="1900" max="2025">
-          <input class="inp" type="number" id="inp-month" placeholder="月" min="1" max="12">
-          <input class="inp" type="number" id="inp-day" placeholder="日" min="1" max="31">
-        </div>
+  <div class="pc-layout">
+    <!-- 左カラム：フォーム -->
+    <div class="pc-left">
+      <div class="hero-area">
+        <span class="hero-emoji">🔮</span>
+        <h1 class="hero-title">星座で<em>無料診断</em></h1>
+        <p class="hero-desc">生年月日を入力するだけ。あなたの星座からAIが本質・才能・運勢を深層鑑定します。</p>
       </div>
-      <button class="btn-main" onclick="calcFortune()">✨ 無料で占う</button>
-      <div class="free-badge">完全無料</div>
-    </div>
-    <div class="trust-row">
-      <div class="trust-item">🔒 個人情報の保存なし</div>
-      <div class="trust-item">⚡ すぐ結果が出る</div>
-      <div class="trust-item">📱 スマホ対応</div>
+      <div class="input-card">
+        <div class="input-card-title">🗓️ 生年月日を入力する</div>
+        <div class="input-card-desc">入力するだけで星座を自動判定し、AIが深く鑑定します</div>
+        <div class="field">
+          <label>生年月日</label>
+          <div class="date-row">
+            <input class="inp" type="number" id="inp-year" placeholder="例: 1990（年）" min="1900" max="2025">
+            <input class="inp" type="number" id="inp-month" placeholder="月" min="1" max="12">
+            <input class="inp" type="number" id="inp-day" placeholder="日" min="1" max="31">
+          </div>
+        </div>
+        <button class="btn-main" onclick="calcFortune()">✨ 無料で占う</button>
+        <div class="free-badge">完全無料</div>
+      </div>
+      <div class="trust-row">
+        <div class="trust-item">🔒 個人情報の保存なし</div>
+        <div class="trust-item">⚡ すぐ結果が出る</div>
+        <div class="trust-item">📱 スマホ対応</div>
+      </div>
     </div>
 
-    <!-- JIBUN FREQとは -->
+    <!-- 右カラム：コンテンツ -->
+    <div class="pc-right">
     <div class="about-section">
       <div class="about-title">🌊 JIBUN FREQとは？</div>
       <p class="about-desc">あなたが生まれた瞬間、宇宙はある特定の周波数を刻んでいました。占いはその周波数のパターンを読み解く、古代から続く技術です。JIBUN FREQでは複数の占術を組み合わせ、あなた固有の「周波数」を多角的に解析します。</p>
@@ -365,7 +385,8 @@ canvas#cycleChart { width: 100%; display: block; }
         </div>
       </div>
     </div>
-  </div>
+  </div><!-- pc-right -->
+  </div><!-- pc-layout -->
 </div>
 
 <div id="screen-result" class="screen hidden">
