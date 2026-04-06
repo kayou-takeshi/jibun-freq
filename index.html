@@ -151,6 +151,16 @@ header {
 .freq-chart-sub { font-size: 11px; color: var(--text-mid); margin-bottom: 12px; }
 canvas#cycleChart { width: 100%; display: block; }
 
+.faq-list { display: flex; flex-direction: column; gap: 12px; margin-top: 16px; }
+.faq-item { background: var(--surface); border-radius: 12px; padding: 16px; border: 1px solid var(--border); }
+.faq-q { font-size: 13px; font-weight: 700; color: var(--text); margin-bottom: 8px; }
+.faq-a { font-size: 12px; color: var(--text-mid); line-height: 1.8; }
+.zodiac-mini-card { display: flex; align-items: center; gap: 10px; background: var(--surface); border-radius: 12px; padding: 12px; border: 1px solid var(--border); }
+.zodiac-mini-icon { font-size: 22px; flex-shrink: 0; }
+.zodiac-mini-name { font-family: 'Zen Maru Gothic', sans-serif; font-size: 13px; font-weight: 700; color: var(--text); }
+.zodiac-mini-date { font-size: 10px; color: var(--text-dim); margin: 2px 0; }
+.zodiac-mini-key { font-size: 10px; color: var(--gold); }
+
 @keyframes fadeUp { from { opacity: 0; transform: translateY(16px); } to { opacity: 1; transform: translateY(0); } }
 @media (max-width: 480px) { .input-card { padding: 24px 20px; } header { padding: 14px 16px; } }
 </style>
@@ -198,22 +208,160 @@ canvas#cycleChart { width: 100%; display: block; }
           <div class="about-step-icon">🌟</div>
           <div class="about-step-text">
             <div class="about-step-title">星座占い</div>
-            <div class="about-step-desc">太陽の365日周期が生み出す周波数。生まれた季節の宇宙エネルギーがあなたの本質を形成します。</div>
+            <div class="about-step-desc">太陽の365日周期が生み出す周波数。生まれた季節の宇宙エネルギーがあなたの本質・性格・才能・恋愛運・仕事運を形成します。</div>
           </div>
         </div>
         <div class="about-step">
           <div class="about-step-icon">🔢</div>
           <div class="about-step-text">
             <div class="about-step-title">数秘術（近日追加）</div>
-            <div class="about-step-desc">生年月日の数字が持つ振動数。数には固有の周波数があり、あなたの使命を示します。</div>
+            <div class="about-step-desc">生年月日の数字が持つ振動数。数には固有の周波数があり、あなたの人生の使命と方向性を示します。</div>
           </div>
         </div>
         <div class="about-step">
           <div class="about-step-icon">⭐</div>
           <div class="about-step-text">
             <div class="about-step-title">九星気学（近日追加）</div>
-            <div class="about-step-desc">9年周期の宇宙のリズム。あなたが今どの周期にいるかを読み解きます。</div>
+            <div class="about-step-desc">9年周期の宇宙のリズム。あなたが今どの周期にいるかを読み解き、動くべき年・蓄える年を明確にします。</div>
           </div>
+        </div>
+        <div class="about-step">
+          <div class="about-step-icon">🌞</div>
+          <div class="about-step-text">
+            <div class="about-step-title">マヤ暦（近日追加）</div>
+            <div class="about-step-desc">260日周期の神聖なサイクル。あなたの魂が持つ使命とKINナンバーから、宇宙的な役割を読み解きます。</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 12星座の紹介 -->
+    <div class="about-section" style="margin-top:20px;">
+      <div class="about-title">♋ 12星座とは</div>
+      <p class="about-desc">星座占いは古代バビロニアで生まれ、4000年以上の歴史を持つ占術です。太陽が1年かけて12の星座を移動する中で、あなたが生まれた時に太陽がどの星座にあったかによって、基本的な性格・才能・運勢が決まると考えられています。</p>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:16px;">
+        <div class="zodiac-mini-card">
+          <span class="zodiac-mini-icon">♈</span>
+          <div>
+            <div class="zodiac-mini-name">牡羊座</div>
+            <div class="zodiac-mini-date">3/21〜4/19</div>
+            <div class="zodiac-mini-key">情熱・行動力・開拓</div>
+          </div>
+        </div>
+        <div class="zodiac-mini-card">
+          <span class="zodiac-mini-icon">♉</span>
+          <div>
+            <div class="zodiac-mini-name">牡牛座</div>
+            <div class="zodiac-mini-date">4/20〜5/20</div>
+            <div class="zodiac-mini-key">安定・感性・忍耐</div>
+          </div>
+        </div>
+        <div class="zodiac-mini-card">
+          <span class="zodiac-mini-icon">♊</span>
+          <div>
+            <div class="zodiac-mini-name">双子座</div>
+            <div class="zodiac-mini-date">5/21〜6/21</div>
+            <div class="zodiac-mini-key">知性・多才・好奇心</div>
+          </div>
+        </div>
+        <div class="zodiac-mini-card">
+          <span class="zodiac-mini-icon">♋</span>
+          <div>
+            <div class="zodiac-mini-name">蟹座</div>
+            <div class="zodiac-mini-date">6/22〜7/22</div>
+            <div class="zodiac-mini-key">直感・守護・感受性</div>
+          </div>
+        </div>
+        <div class="zodiac-mini-card">
+          <span class="zodiac-mini-icon">♌</span>
+          <div>
+            <div class="zodiac-mini-name">獅子座</div>
+            <div class="zodiac-mini-date">7/23〜8/22</div>
+            <div class="zodiac-mini-key">創造力・カリスマ・輝き</div>
+          </div>
+        </div>
+        <div class="zodiac-mini-card">
+          <span class="zodiac-mini-icon">♍</span>
+          <div>
+            <div class="zodiac-mini-name">乙女座</div>
+            <div class="zodiac-mini-date">8/23〜9/22</div>
+            <div class="zodiac-mini-key">分析力・完璧主義・奉仕</div>
+          </div>
+        </div>
+        <div class="zodiac-mini-card">
+          <span class="zodiac-mini-icon">♎</span>
+          <div>
+            <div class="zodiac-mini-name">天秤座</div>
+            <div class="zodiac-mini-date">9/23〜10/22</div>
+            <div class="zodiac-mini-key">調和・美意識・公正</div>
+          </div>
+        </div>
+        <div class="zodiac-mini-card">
+          <span class="zodiac-mini-icon">♏</span>
+          <div>
+            <div class="zodiac-mini-name">蠍座</div>
+            <div class="zodiac-mini-date">10/23〜11/21</div>
+            <div class="zodiac-mini-key">洞察力・変容・意志</div>
+          </div>
+        </div>
+        <div class="zodiac-mini-card">
+          <span class="zodiac-mini-icon">♐</span>
+          <div>
+            <div class="zodiac-mini-name">射手座</div>
+            <div class="zodiac-mini-date">11/22〜12/21</div>
+            <div class="zodiac-mini-key">探求心・自由・哲学</div>
+          </div>
+        </div>
+        <div class="zodiac-mini-card">
+          <span class="zodiac-mini-icon">♑</span>
+          <div>
+            <div class="zodiac-mini-name">山羊座</div>
+            <div class="zodiac-mini-date">12/22〜1/19</div>
+            <div class="zodiac-mini-key">野心・忍耐・達成力</div>
+          </div>
+        </div>
+        <div class="zodiac-mini-card">
+          <span class="zodiac-mini-icon">♒</span>
+          <div>
+            <div class="zodiac-mini-name">水瓶座</div>
+            <div class="zodiac-mini-date">1/20〜2/18</div>
+            <div class="zodiac-mini-key">革新・独立・未来志向</div>
+          </div>
+        </div>
+        <div class="zodiac-mini-card">
+          <span class="zodiac-mini-icon">♓</span>
+          <div>
+            <div class="zodiac-mini-name">魚座</div>
+            <div class="zodiac-mini-date">2/19〜3/20</div>
+            <div class="zodiac-mini-key">直感・共感・神秘</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- よくある質問 -->
+    <div class="about-section" style="margin-top:20px;">
+      <div class="about-title">❓ よくある質問</div>
+      <div class="faq-list">
+        <div class="faq-item">
+          <div class="faq-q">Q. 個人情報は保存されますか？</div>
+          <div class="faq-a">A. 入力した生年月日はお使いのブラウザ上でのみ処理され、サーバーには一切保存されません。安心してご利用ください。</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q">Q. 占いは本当に無料ですか？</div>
+          <div class="faq-a">A. 基本診断はすべて完全無料です。生年月日を入力するだけで星座鑑定・AI深層鑑定・運勢グラフをお届けします。</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q">Q. 星座の境界日（カスプ）はどう判定されますか？</div>
+          <div class="faq-a">A. 各星座の正確な境界日を使用して判定しています。境界付近の生まれの方も正確に鑑定します。</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q">Q. 数秘術・九星気学はいつ追加されますか？</div>
+          <div class="faq-a">A. 計算精度を検証した上で順次追加予定です。複数の占術が組み合わさることで、周波数の精度がさらに上がります。</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q">Q. 占い結果は何に使えますか？</div>
+          <div class="faq-a">A. 自己理解・人間関係・恋愛・仕事の方向性を考えるヒントにご活用ください。エンターテインメント目的のコンテンツです。</div>
         </div>
       </div>
     </div>
